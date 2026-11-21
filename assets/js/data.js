@@ -7,11 +7,11 @@ export const profile = {
   shortName: "Alexis Grédelue",
   tagline: "Machine Learning Engineer",
   email: "alexis.gre74@gmail.com",
-  emailNote: "Open to Machine Learning Engineer roles. My CV is available for download below.",
+  emailNote: "Open to Machine Learning Engineer roles. CV available in English and French.",
   github: "https://github.com/Alexis744?tab=repositories",
   linkedin: "https://www.linkedin.com/in/alexis-gr%C3%A9delue/",
-  orcid: "https://orcid.org/0009-0004-4700-0072",
-  cv: "assets/docs/cv.pdf"
+  cv: "assets/docs/cv_en.pdf",
+  cvFr: "assets/docs/cv.pdf"
 };
 
 export const navigation = [
@@ -30,7 +30,7 @@ export const heroSignals = [
 ];
 
 export const quickLinks = [
-  { label: "CV", href: "assets/docs/cv.pdf" },
+  { label: "CV", href: "assets/docs/cv_en.pdf" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" }
@@ -45,10 +45,11 @@ export const experiences = [
           "and validated it on independent simulated samples. Presented progress to the ATLAS team every two weeks."
   },
   {
-    meta: "Engineering internship · TIPEE & SPIE Batignolles",
-    title: "Thermal Modelling Engineer Intern",
-    body: "Turned an industrial temperature-prediction problem into a one-dimensional numerical thermal model. " +
-          "Validated the model and delivered it to the client as an Excel-based tool for day-to-day use."
+    meta: "Feb 2025 – Aug 2025 · TIPEE platform, La Rochelle",
+    title: "R&D Engineer Intern — Numerical Modelling & Python",
+    body: "Built a Python simulation tool predicting the temperature of road materials from their environment " +
+          "(heat equation solved with the Crank–Nicolson method, meteorological and geospatial data with GeoPandas). " +
+          "Reached R² = 0.96 against a CEREMA reference model over one year, and handed it over to the industrial partner with an Excel interface."
   },
   {
     meta: "Apr 2024 – Jul 2024 · Kumamoto University, Japan",

@@ -41,10 +41,10 @@ const renderHeroActions = () => {
 const renderContactLinks = () => {
   const links = [
     profile.email ? { href: `mailto:${profile.email}`, label: "Email", detail: profile.email } : null,
-    { href: profile.cv, label: "CV", detail: "PDF download" },
+    { href: profile.cv, label: "CV (English)", detail: "PDF download" },
+    { href: profile.cvFr, label: "CV (French)", detail: "PDF download" },
     profile.linkedin ? { href: profile.linkedin, label: "LinkedIn", detail: "Professional profile" } : null,
     profile.github ? { href: profile.github, label: "GitHub", detail: "Code repositories" } : null,
-    profile.orcid ? { href: profile.orcid, label: "ORCID", detail: "Research identifier" } : null
   ].filter(Boolean);
 
   setHtml("#contact-links", links.map(renderContactLink).join(""));
