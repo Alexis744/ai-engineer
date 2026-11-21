@@ -1,1 +1,1 @@
-Place your profile image here, for example `profile.jpg`. Recommended size: square image, at least 800×800 px.
+Profile photo used on the homepage (`profile.jpg`, about 800 px wide).

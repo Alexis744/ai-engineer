@@ -1,20 +1,6 @@
-/* Main website entry point. Content is imported from data.js and rendered with small dependency-free components. */
+/* Main entry point. Content is imported from data.js and rendered with small dependency-free components. */
 
-import {
-  currentFocus,
-  cvHighlights,
-  education,
-  experiences,
-  fitAreas,
-  heroSignals,
-  navigation,
-  profile,
-  quickLinks,
-  projects,
-  researchFocus,
-  skillGroups,
-  writing
-} from "./data.js";
+import { experiences, heroSignals, navigation, profile, quickLinks, projects, skillGroups } from "./data.js";
 
 import {
   link,
@@ -23,8 +9,6 @@ import {
   renderNavigation,
   renderProject,
   renderSkillGroup,
-  renderTimelineItem,
-  renderWriting,
   renderList
 } from "./components.js";
 
@@ -39,7 +23,7 @@ const setText = (selector, text) => {
 };
 
 const updateStaticProfileText = () => {
-  document.title = `${profile.shortName} | ${profile.tagline}`;
+  document.title = `${profile.name} — ${profile.tagline}`;
   document.querySelectorAll(".nav__brand").forEach((element) => {
     element.textContent = profile.shortName;
   });
@@ -47,9 +31,9 @@ const updateStaticProfileText = () => {
 
 const renderHeroActions = () => {
   const actions = [
-    { href: profile.cv, label: "Open Academic CV", className: "button button--primary" },
-    { href: "#projects", label: "View Research Projects", className: "button button--secondary" },
-    { href: "#fit", label: "PhD Research Fit", className: "button button--secondary" }
+    { href: profile.cv, label: "Download CV", className: "button button--primary" },
+    { href: "#projects", label: "View projects", className: "button button--secondary" },
+    { href: "#contact", label: "Contact", className: "button button--secondary" }
   ];
   setHtml("#hero-actions", actions.map(link).join(""));
 };
@@ -57,11 +41,10 @@ const renderHeroActions = () => {
 const renderContactLinks = () => {
   const links = [
     profile.email ? { href: `mailto:${profile.email}`, label: "Email", detail: profile.email } : null,
-    { href: profile.cv, label: "Academic CV", detail: "Primary evidence document" },
-    profile.scholar ? { href: profile.scholar, label: "Google Scholar", detail: "Publications and citations" } : null,
-    profile.orcid ? { href: profile.orcid, label: "ORCID", detail: "Research identifier" } : null,
-    profile.github ? { href: profile.github, label: "GitHub", detail: "Research code" } : null,
-    profile.linkedin ? { href: profile.linkedin, label: "LinkedIn", detail: "Professional profile" } : null
+    { href: profile.cv, label: "CV", detail: "PDF download" },
+    profile.linkedin ? { href: profile.linkedin, label: "LinkedIn", detail: "Professional profile" } : null,
+    profile.github ? { href: profile.github, label: "GitHub", detail: "Code repositories" } : null,
+    profile.orcid ? { href: profile.orcid, label: "ORCID", detail: "Research identifier" } : null
   ].filter(Boolean);
 
   setHtml("#contact-links", links.map(renderContactLink).join(""));
@@ -92,15 +75,9 @@ const init = () => {
   renderHeroActions();
   setHtml("#hero-signals", renderList(heroSignals, "evidence-list"));
   setHtml("#quick-links", quickLinks.map(({ label, href }) => `<a href="${href}">${label}</a>`).join(""));
-  setHtml("#current-focus", renderList(currentFocus, "check-list"));
-  setHtml("#research-grid", researchFocus.map(renderCard).join(""));
-  setHtml("#experience-grid", experiences.map(renderCard).join(""));
   setHtml("#projects-grid", projects.map(renderProject).join(""));
-  setHtml("#education-timeline", education.map(renderTimelineItem).join(""));
+  setHtml("#experience-grid", experiences.map(renderCard).join(""));
   setHtml("#skills-grid", skillGroups.map(renderSkillGroup).join(""));
-  setHtml("#writing-list", writing.map(renderWriting).join(""));
-  setHtml("#fit-list", renderList(fitAreas, "check-list"));
-  setHtml("#cv-highlights", renderList(cvHighlights, "check-list"));
   renderContactLinks();
   setHtml("#current-year", new Date().getFullYear());
   bindMobileNavigation();

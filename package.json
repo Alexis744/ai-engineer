@@ -1,8 +1,8 @@
 {
-  "name": "academic-github-pages-website",
+  "name": "ml-engineer-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Clean academic personal website for GitHub Pages.",
+  "description": "Personal portfolio website — Machine Learning Engineer.",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.js",
@@ -10,11 +10,9 @@
     "serve": "npx --yes serve ."
   },
   "keywords": [
-    "academic",
-    "github-pages",
-    "physics",
+    "portfolio",
     "machine-learning",
-    "scientific-ai"
+    "github-pages"
   ],
   "license": "MIT"
 }

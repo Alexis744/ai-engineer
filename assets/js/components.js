@@ -1,4 +1,4 @@
-/* Reusable rendering helpers for the static academic website. */
+/* Reusable rendering helpers. */
 
 const escapeHtml = (value) =>
   String(value ?? "")
@@ -36,7 +36,7 @@ export const renderProject = ({ title, area, problem, method, results, artifacts
       ? `<li class="project-link project-link--github">${resourceLink(github, "GitHub Repository", "")}</li>`
       : "",
     paper
-      ? `<li class="project-link project-link--paper">${resourceLink(paper, "Internship report", "")}</li>`
+      ? `<li class="project-link project-link--paper">${resourceLink(paper, "Technical report (PDF)", "")}</li>`
       : ""
   ].filter(Boolean).join("");
 
@@ -47,7 +47,7 @@ export const renderProject = ({ title, area, problem, method, results, artifacts
         <h3>${escapeHtml(title)}</h3>
         <dl class="research-brief">
           <div><dt>Problem</dt><dd>${escapeHtml(problem)}</dd></div>
-          <div><dt>Method</dt><dd>${escapeHtml(method)}</dd></div>
+          <div><dt>Approach</dt><dd>${escapeHtml(method)}</dd></div>
           <div><dt>Results</dt><dd>${escapeHtml(results)}</dd></div>
           <div><dt>Artifacts</dt><dd>${escapeHtml(artifacts)}</dd></div>
         </dl>
@@ -57,22 +57,9 @@ export const renderProject = ({ title, area, problem, method, results, artifacts
       </div>
       <div class="project-card__aside">
         <span class="status-label">${escapeHtml(status)}</span>
-        ${links ? `<ul class="link-list">${links}</ul>` : `<p class="artifact-note">Artifact links will be added after public released.</p>`}
+        ${links ? `<ul class="link-list">${links}</ul>` : ""}
       </div>
     </article>
-  `;
-};
-
-export const renderTimelineItem = ({ period, title, institution, dates, focus, evidence }) => {
-  const meta = [institution, dates].filter(Boolean);
-  return `
-    <li class="timeline__item">
-      <div class="timeline__period">${escapeHtml(period)}</div>
-      <h3>${escapeHtml(title)}</h3>
-      ${meta.length ? `<div class="timeline__meta">${meta.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div>` : ""}
-      <p>${escapeHtml(focus)}</p>
-      ${renderList(evidence, "mini-list")}
-    </li>
   `;
 };
 
@@ -82,52 +69,6 @@ export const renderSkillGroup = ({ title, items }) => `
     ${renderList(items)}
   </article>
 `;
-
-export const renderWriting = ({
-  type,
-  title,
-  body,
-  href,
-  linkLabel,
-  links = [],
-}) => {
-  /*
-   * Backward compatibility:
-   * existing entries using href/linkLabel continue to work.
-   */
-  const resourceLinks = links.length
-    ? links
-    : href
-      ? [{ href, label: linkLabel }]
-      : [];
-
-  const renderedLinks = resourceLinks
-    .filter(({ href }) => Boolean(href))
-    .map(
-      ({ href, label }) => `
-        <li>
-          ${resourceLink(href, label, label)}
-        </li>
-      `,
-    )
-    .join("");
-
-  return `
-    <article class="report-card writing-card">
-      <span class="card__meta">${escapeHtml(type)}</span>
-      <h3>${escapeHtml(title)}</h3>
-      <p>${escapeHtml(body)}</p>
-
-      ${
-        renderedLinks
-          ? `<ul class="link-list writing-card__links">
-              ${renderedLinks}
-            </ul>`
-          : ""
-      }
-    </article>
-  `;
-};
 
 export const renderContactLink = ({ href, label, detail }) => {
   if (!href) return "";

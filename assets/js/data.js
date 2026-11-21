@@ -1,239 +1,113 @@
 /*
-  Academic profile content.
+  Site content. Edit this file to update the text shown on the page.
 */
 
 export const profile = {
   name: "Alexis Grédelue",
-  shortName: "Research profile",
-  tagline: "Open to PhD Opportunities",
+  shortName: "Alexis Grédelue",
+  tagline: "Machine Learning Engineer",
   email: "alexis.gre74@gmail.com",
-  emailNote: "Contact details and references are provided in the academic CV.",
+  emailNote: "Open to Machine Learning Engineer roles. My CV is available for download below.",
   github: "https://github.com/Alexis744?tab=repositories",
   linkedin: "https://www.linkedin.com/in/alexis-gr%C3%A9delue/",
-  scholar: "",
   orcid: "https://orcid.org/0009-0004-4700-0072",
   cv: "assets/docs/cv.pdf"
 };
 
 export const navigation = [
-  ["Research", "#research"],
   ["Projects", "#projects"],
-  ["Publications", "#writing"],
-  ["Education", "#education"],
+  ["Experience", "#experience"],
+  ["Skills", "#skills"],
   ["Contact", "#contact"]
 ];
 
 export const heroSignals = [
-  "Engineering Physics → MSc Universe and Particles + parallel Data Science Diploma",
-  "Scientific machine-learning experience in particle physics at CERN/ATLAS",
-  "Primary research direction: learning physical dynamics through world models and long-horizon prediction",
-  "Parallel interest: agentic AI, scientific exploration, and procedural skill distillation from LLMs"
-  ];
+  "Engineering degree in Physics + MSc Universe & Particles + University Diploma in Data Science",
+  "6-month machine-learning internship within the CERN ATLAS Collaboration (LPCA)",
+  "Benchmarked Random Forest, Neural Network and XGBoost models on 1M+ simulated events",
+  "International research experience: Kumamoto University, Japan",
+  "1st prize — Clermont Auvergne PEPITE Hackathon 2024"
+];
 
 export const quickLinks = [
   { label: "CV", href: "assets/docs/cv.pdf" },
-  { label: "Research projects", href: "#projects" },
-  { label: "Selected writing", href: "#writing" },
-  { label: "PhD fit", href: "#fit" }
-];
-
-export const currentFocus = [
-  "World models for complex physical environments",
-  "Learning physical dynamics from multimodal observations",
-  "Long-horizon prediction, planning, and memory",
-  "Parallel interest: agentic AI for scientific exploration and procedural skill distillation from LLMs"
-];
-
-export const researchFocus = [
-  {
-    title: "Physics and simulation as foundations",
-    body: "Use physical modelling and simulation-based data to understand complex systems, formulate meaningful learning problems, and evaluate whether model predictions remain scientifically consistent."
-  },
-  {
-    title: "Learning physical dynamics",
-    body: "Develop models that infer latent states, interactions, and system evolution from incomplete, noisy, or multimodal observations."
-  },
-  {
-    title: "Toward world models",
-    body: "Study learned representations of environments that support long-horizon prediction, memory, and planning in complex physical systems."
-  }
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" }
 ];
 
 export const experiences = [
   {
-    meta: "High-energy physics",
-    title: "ATLAS Collaboration — LLP reinterpretation",
-    body: "M2 research internship at LPCA Clermont-Ferrand within the ATLAS"+
-          "Collaboration. I develop and compare machine-learning surrogate"+
-          "models for the reinterpretation of long-lived-particle searches,"+
-          "with a focus on calibration, validation, applicability limits,"+
-          "and reproducible Python analysis pipelines."
+    meta: "Feb 2026 – Jul 2026 · LPCA Clermont-Ferrand · CERN ATLAS Collaboration",
+    title: "Machine Learning Research Intern",
+    body: "Built machine-learning surrogate models to reinterpret an ATLAS search for long-lived particles without full detector simulation. " +
+          "Benchmarked Random Forests, calibrated Random Forests, Neural Networks and XGBoost, built the end-to-end Python pipeline " +
+          "and validated it on independent simulated samples. Presented progress to the ATLAS team every two weeks."
   },
   {
-    meta: "Engineering physics · Thermal modelling",
-    title: "TIPEE & SPIE Batignolles - Temperature-prediction model for industry",
-    body: "Engineering internship focused on the development of a"+
-          "one-dimensional thermal model for an industrial partner."+
-          "I translated the physical problem into a predictive numerical"+
-          "model and delivered both the validated model and an Excel-based"+
-          "executable tool for practical use."
+    meta: "Engineering internship · TIPEE & SPIE Batignolles",
+    title: "Thermal Modelling Engineer Intern",
+    body: "Turned an industrial temperature-prediction problem into a one-dimensional numerical thermal model. " +
+          "Validated the model and delivered it to the client as an Excel-based tool for day-to-day use."
   },
   {
-    meta: "Cosmology · Observational data",
-    title: "Kumamoto University — Type Ia supernovae",
-    body: "Research internship in Japan focused on cosmological parameter"+
-          "inference from Type Ia supernova observations. I analysed"+
-          "observational datasets, compared cosmological models, and studied"+
-          "the estimation of parameters describing the expansion and matter"+
-          "content of the Universe."
+    meta: "Apr 2024 – Jul 2024 · Kumamoto University, Japan",
+    title: "Research Intern — Cosmology",
+    body: "Analysed Type Ia supernova datasets in Python and fitted cosmological parameters by minimising residuals with observations, " +
+          "producing confidence regions supporting the existence of dark energy. Weekly presentations in English."
   }
 ];
 
 export const projects = [
   {
-    title: "Machine-learning surrogate models for ATLAS long-lived-particle reinterpretation",
-    area: "Particle physics / machine learning / long-lived particles",
-    problem:"Reproduce the exclusion limits of the ATLAS MSVertex search directly from generator-level observables, without requiring full detector simulation or event reconstruction.",
-    method:"Developed and benchmarked surrogate classifiers to predict event-level ABCD-region probabilities from LLP kinematics and decay geometry. Reconstructed signal yields and exclusion limits, then validated the complete pipeline using independent MadGraph5 and Pythia8 event samples.",
-    results:"Selected a compact 1.44 MB XGBoost model achieving a 0.01% global reconstruction error in the signal regions on the test sample. The framework reproduced the main ATLAS exclusion-limit behaviour across several LLP benchmarks and quantified its interpolation and extrapolation limits for unseen masses and signal topologies.",
-    artifacts: "Research artifact structured for repository or manuscript/report attachment when approved for public release.",
-    status: "Research project",
-    technologies: ["Python", "Particle Physics", "Machine Learning", "Scientific Computing"],
-    github: "https://github.com/Alexis744/ATLAS-Machine-Learning-Surrogate-Model.git",
+    title: "ML surrogate models replacing full detector simulation (CERN / ATLAS)",
+    area: "Machine learning · Model validation · Particle physics",
+    problem: "Reproducing the results of an ATLAS search normally requires full detector simulation and event reconstruction, which is slow and not available outside the collaboration.",
+    method: "Trained and benchmarked Random Forest (with and without probability calibration), Neural Network and XGBoost classifiers on 1M+ simulated events to predict event categories from generator-level features. Rebuilt signal yields and exclusion limits, validated the full pipeline on independent MadGraph5 / Pythia8 samples, and stress-tested interpolation (unseen masses) and extrapolation (unseen signal types).",
+    results: "Selected XGBoost: a 1.44 MB model (vs 112 MB for the neural network and 210–591 MB for Random Forests), trained in 34 s (vs 30 min for the neural network), with a net yield bias of +0.01% on a 349k-event held-out test set. Reproduced the official ATLAS limits across several benchmark models and documented where the surrogate stops being reliable.",
+    artifacts: "Public code repository and full 52-page technical report.",
+    status: "CERN / ATLAS · 2026",
+    technologies: ["Python", "XGBoost", "PyTorch", "scikit-learn", "ROOT / uproot", "Model validation", "Calibration"],
+    github: "https://github.com/Alexis744/ATLAS-Machine-Learning-Surrogate-Model",
     paper: "assets/docs/ATLAS_internship_report.pdf"
-  },
-  {
-    title: "Adaptation / extension of an open-source agentic AI system",
-    area: "Agentic AI and research workflow automation",
-    problem: "Adapt an open-source agentic AI framework into a local assistant for scientific coding, technical workflows, and structured task execution.",
-    method: "Customized the interface, connection workflow, task procedures, local tooling, and documentation around an existing agent framework. The work focuses on orchestration and reproducible human-in-the-loop workflows, not on model fine-tuning.",
-    results: "Ongoing works",
-    artifacts: "Architecture notes, implementation documentation, and reproducible workflow examples will be provided when the project will be ready for public release.",
-    status: "Personal software prototype",
-    technologies: ["Agentic AI", "Workflow Orchestration", "Local Tools", "Documentation", "Open-source Adaptation"],
-    github: "",
-    paper: ""
   }
-];
-
-export const education = [
-  {
-    period: "Foundation",
-    title: "Engineering Physics",
-    institution: "Polytech Clermont-Ferrand",
-    dates: "2022-2025",
-    focus: "Heat transfer phenomena, Solid state physics, engineering systems, and computer science.",
-    evidence: ["Mathematical modelling", "Physical intuition", "Computational problem solving", "Engineering systems"]
-  },
-  {
-    period: "Data Science",
-    title: "University Diploma in Data Science",
-    institution: "EUPI Clermont-Ferrand",
-    dates: "2025-2026",
-    focus: "Statistical learning, data analysis, programming, and machine learning methods.",
-    evidence: ["Statistical learning", "Programming", "Data-driven analysis", "Machine learning fundamentals"]
-  },
-  {
-    period: "Graduate Studies",
-    title: "Master's Degree in Universe and Particles",
-    institution: "EUPI Clermont-Ferrand",
-    dates: "2025-2026",
-    focus: "Particle physics, cosmology, general relativity, scientific computing, and electro-weak physics.",
-    evidence: ["Particle physics", "Cosmology", "Scientific computing", "Electro-weak physics"]
-  }
-];
-
-export const writing = [
-  {
-    type: "Research contribution",
-    title: "ATLAS analysis correction and revised exclusion limits",
-    body: "Identified a cross-section normalization bug that prompted an official erratum. "+
-    "The correction improved the 95% CL upper limits by about 33% for the 0.1, 1, and 10 GeV "+
-    "ALP benchmarks (Figs. 15b and 16a), and strengthened the [mH, mZd] = [125, 5] and [400, 200] GeV dark-photon limits by a factor of 10 (Figs. 18a and 18b).",
-    links: [
-      {
-        label: "Original ATLAS paper",
-        href: "assets/docs/MSVertex.pdf",
-      },
-      {
-        label: "Official erratum (on validation)",
-        href: "assets/docs/msVtxRun2Errata.pdf",
-      },
-    ],
-  },
-  {
-    type: "Ongoing research contribution",
-    title: "Contribution to an ongoing PhD thesis",
-    body:"My work on machine-learning-based reinterpretation, model validation, and applicability limits is being incorporated into part of an ongoing PhD thesis. The contribution is expected to be acknowledged when the final thesis is published.",
-    href: "",
-    linkLabel: ""
-  },  
-  // {
-  //   type: "Internship report",
-  //   title: "TIPEE internship report",
-  //   body: "Applied physics internship report on thermal modelling, geospatial analysis, and experimental characterization.",
-  //   href: "assets/docs/TIPEE_internship_report.pdf",
-  //   linkLabel: "PDF"
-  // },
-  // {
-  //   type: "Internship report",
-  //   title: "Kumamoto internship report",
-  //   body: "Cosmology research report on Type Ia supernovae and observational constraints on cosmological parameters.",
-  //   href: "assets/docs/Kumamoto_internship_report.pdf",
-  //   linkLabel: "PDF"
-  // }
 ];
 
 export const skillGroups = [
   {
-    title: "Scientific data and simulation",
+    title: "Machine learning",
     items: [
-      "Python, NumPy, and pandas",
-      "ROOT and uproot data processing",
-      "HepMC event-record analysis",
-      "Simulation-based and observational datasets"
-    ]
-  },
-  {
-    title: "Machine learning and validation",
-    items: [
-      "Scikit-learn, PyTorch, XGBoost and Neural Network",
-      "Classification and surrogate modelling",
+      "scikit-learn, XGBoost, PyTorch",
+      "Random Forests, gradient boosting, neural networks",
       "Probability calibration and weighted metrics",
-      "Model comparison and applicability analysis"
+      "Model benchmarking: accuracy, size, training and inference time"
     ]
   },
   {
-    title: "Scientific modelling and inference",
+    title: "Data and scientific computing",
     items: [
-      "Numerical and one-dimensional thermal modelling",
-      "Statistical comparison of physical hypotheses",
-      "Cosmological parameter estimation",
-      "Particle-physics reinterpretation workflows"
+      "Python, NumPy, SciPy, pandas, Matplotlib",
+      "ROOT / uproot and HepMC data processing",
+      "Monte Carlo simulation data (MadGraph5, Pythia8)",
+      "Statistical inference and parameter estimation"
     ]
   },
   {
-    title: "Research software and delivery",
+    title: "Modelling and validation",
     items: [
-      "Linux, Git, GitHub, and VS Code",
-      "Modular and reproducible Python pipelines",
-      "Scientific data visualisation",
-      "Docker, n8n and workflow automation"
+      "Generalisation tests on unseen parameters and data",
+      "Interpolation and extrapolation limits",
+      "Numerical physical modelling",
+      "Feature engineering and data preprocessing"
+    ]
+  },
+  {
+    title: "Engineering and tooling",
+    items: [
+      "Linux, Git, GitHub, VS Code, Docker",
+      "Modular, reproducible Python pipelines",
+      "Local LLMs and automation: Ollama, n8n",
+      "Technical reporting (LaTeX) and presentations"
     ]
   }
-];
-
-export const fitAreas = [
-  "World models and learned environment dynamics",
-  "Multimodal state estimation and temporal modelling",
-  "Long-horizon prediction, memory, and planning",
-  "Physics-grounded and simulation-rich learning",
-  "Agentic AI for scientific exploration"
-];
-
-export const cvHighlights = [
-  "Education path from Engineering Physics to Data Science and Universe and Particles",
-  "Research exposure in CERN / ATLAS and international academic environments",
-  "Selected projects in particle physics reinterpretation and cosmological analysis",
-  "Technical preparation in Python, numerical modelling, data analysis, and reproducible workflows"
 ];
