@@ -112,3 +112,45 @@ export const skillGroups = [
     ]
   }
 ];
+
+/*
+  Profile assistant (chat widget).
+  endpoint: your public n8n webhook, e.g. "https://<your-domain>.ngrok-free.app/webhook/portfolio-chat".
+  Leave it empty ("") to hide the widget.
+*/
+export const chat = {
+  endpoint: "",
+  suggestions: [
+    "What did Alexis do at CERN?",
+    "Has he built AI agents or automations?",
+    "Which ML tools does he use?",
+    "Is he open to roles in Geneva?"
+  ],
+  // Offline fallback: used when the assistant (running on my machine) is not reachable.
+  faq: [
+    {
+      keywords: ["cern", "atlas", "lpca", "surrogate", "internship", "stage"],
+      answer: "At LPCA within the CERN ATLAS Collaboration (Feb–Jul 2026), Alexis built ML surrogate models: Random Forest, XGBoost and PyTorch benchmarked on 1M+ simulated events, final XGBoost model of 1.44 MB. Details in the Projects section."
+    },
+    {
+      keywords: ["agent", "automation", "automatisation", "n8n", "ollama", "llm", "iris", "chatbot"],
+      answer: "Alexis builds automations and AI integrations with n8n, Docker, PostgreSQL and local LLMs (Ollama) in his personal IRIS platform — this assistant runs on that stack."
+    },
+    {
+      keywords: ["skill", "tool", "python", "stack", "competence", "outil", "pytorch", "xgboost"],
+      answer: "Main tools: Python, scikit-learn, XGBoost, PyTorch, NumPy, Pandas, SciPy, Git, Docker, PostgreSQL, n8n and Ollama. See the Technical toolkit section."
+    },
+    {
+      keywords: ["geneva", "geneve", "switzerland", "suisse", "location", "remote", "relocat"],
+      answer: "Alexis is based in Annecy, France, and open to roles in Geneva and French-speaking Switzerland."
+    },
+    {
+      keywords: ["education", "degree", "diplome", "master", "formation", "study"],
+      answer: "Engineering degree (Polytech Clermont-Ferrand), Master 2 Universe & Particles and University Diploma in Data Science (EUPI Clermont-Ferrand, 2026)."
+    },
+    {
+      keywords: ["contact", "email", "mail", "reach", "joindre", "cv", "resume"],
+      answer: "You can reach Alexis at alexis.gre74@gmail.com. Both CVs (English and French) are in the Contact section."
+    }
+  ]
+};

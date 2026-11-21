@@ -19,6 +19,7 @@ const requiredPaths = [
   "assets/js/data.js",
   "assets/js/components.js",
   "assets/js/main.js",
+  "assets/js/chat.js",
   "assets/docs/cv.pdf",
   "assets/docs/cv_en.pdf",
   "README.md"

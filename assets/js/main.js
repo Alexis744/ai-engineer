@@ -1,6 +1,7 @@
 /* Main entry point. Content is imported from data.js and rendered with small dependency-free components. */
 
-import { experiences, heroSignals, navigation, profile, quickLinks, projects, skillGroups } from "./data.js";
+import { chat, experiences, heroSignals, navigation, profile, quickLinks, projects, skillGroups } from "./data.js";
+import { initChat } from "./chat.js";
 
 import {
   link,
@@ -81,6 +82,7 @@ const init = () => {
   renderContactLinks();
   setHtml("#current-year", new Date().getFullYear());
   bindMobileNavigation();
+  initChat({ ...chat, email: profile.email });
 };
 
 document.addEventListener("DOMContentLoaded", init);
